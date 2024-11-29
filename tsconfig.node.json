@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5", // コードがコンパイルされるJavaScriptのバージョン
+    "module": "commonjs",
+    "lib": ["es2015", "dom"], // ブラウザのDOMとES2015の機能を利用する
+    "types": ["node", "vite", "@vitejs/plugin-react"],
+    "composite": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noEmit": true
+  },
+  "include": ["vite.config.ts"]
+}
