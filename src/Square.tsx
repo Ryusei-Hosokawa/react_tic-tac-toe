@@ -18,14 +18,14 @@ export default function Square({ value, bgColorClass, textColorClass, onSquareCl
                 border-[1px]
                 border-[#555]
                 text-[#fefefe]
-                text-[min(12vw,100px)]
+                text-[min(10vw,100px)]
                 font-[900]
                 leading-[1em]
-                ${bgColorClass}
-                ${textColorClass}
                 transition-all
                 duration-250
                 ease-in-out
+                ${bgColorClass}
+                ${textColorClass}
             `}
             onClick={onSquareClick}
         >

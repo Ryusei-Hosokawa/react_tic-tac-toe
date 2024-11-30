@@ -2,24 +2,30 @@ import React, { useState } from "react";
 import { CalculateWinner } from "./CalculateWinner.ts";
 import StatusMessage from "./StatusMessage";
 import Square from "./Square";
+import { SquareTypes } from "./SquareTypes.ts";
 
-export default function Board() {
-    const [xIsNext, setXIsNext] = useState(true);
-    const [squares, setSquares] = useState(Array(9).fill({value: null, bgColor: "", textColor: ""}));
-    const winner: string | null = CalculateWinner(squares.map((square) => square.value));
+type BoardProps = {
+    xIsNext: boolean;
+    squares: SquareTypes[];
+    onPlay: (newSquares: SquareTypes[]) => void;
+};
+
+export default function Board({ xIsNext, squares, onPlay }: BoardProps) {
+    const winner: string | null = CalculateWinner(
+        squares.map((square) => square.value || "")
+    );
 
     const handleClick = (index: number) => {
         if (squares[index].value || winner) {
             return;
         }
         const newSquares = squares.slice();
-        newSquares[index] = { 
-            value: xIsNext ? "✕" : "○", 
+        newSquares[index] = {
+            value: xIsNext ? "✕" : "○",
             bgColor: xIsNext ? "bg-[#ff5e5e]" : "bg-[#5e9eff]",
-            textColor: xIsNext ? "text-[#ffbebe]" : "text-[#bbd6ff]"
+            textColor: xIsNext ? "text-[#ffbebe]" : "text-[#bbd6ff]",
         };
-        setSquares(newSquares);
-        setXIsNext(!xIsNext);
+        onPlay(newSquares);
     };
 
     return (
