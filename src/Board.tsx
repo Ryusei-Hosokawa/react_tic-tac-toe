@@ -46,9 +46,9 @@ export default function Board({ xIsNext, squares, onPlay }: BoardProps) {
                 {squares.map((square, index) => (
                     <Square
                         key={index}
-                        value={square.value}
-                        bgColorClass={square.bgColor}
-                        textColorClass={square.textColor}
+                        value={square.value || ""}
+                        bgColorClass={square.bgColor || ""}
+                        textColorClass={square.textColor || ""}
                         onSquareClick={() => handleClick(index)}
                     />
                 ))}

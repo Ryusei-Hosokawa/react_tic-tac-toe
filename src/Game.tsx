@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Board from "./Board";
+import Moves from "./Moves";
 import { SquareTypes } from "./SquareTypes.ts";
 
 export default function Game() {
@@ -24,22 +25,6 @@ export default function Game() {
         setCurrentMove(nextMove);
     }
 
-    const moves = history.map((_, moveIndex) => {
-        let description;
-        if (moveIndex > 0) {
-            description = "Go to move #" + moveIndex;
-        } else {
-            description = "Go to game start";
-        }
-        return (
-            <li key={moveIndex} className="">
-                <button className="" onClick={() => jumpTo(moveIndex)}>
-                    {description}
-                </button>
-            </li>
-        );
-    });
-
     return (
         <div className="flex gap-x-[10vw] w-[100%] px-[5vw]">
             <Board
@@ -48,7 +33,7 @@ export default function Game() {
                 onPlay={handlePlay}
             />
             <ol className="w-[clamp(100px,30vw,250px)] flex flex-col gap-y-[5px]">
-                {moves}
+                <Moves  history={history} onClickJump={jumpTo} />
             </ol>
         </div>
     );
