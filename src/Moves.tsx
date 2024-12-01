@@ -17,7 +17,7 @@ export default function Moves({ history, onClickJump }: MovesProps) {
                 return (
                     <li key={moveIndex} className="">
                         <button
-                            className=""
+                            className="inline-block p-[5px_10px_7px] rounded-[6px] text-[clamp(12px,3vw,20px)] text-[#efefef] bg-[#2b2f36] font-[500] leading-[1em]"
                             onClick={() => onClickJump(moveIndex)}
                         >
                             {description}

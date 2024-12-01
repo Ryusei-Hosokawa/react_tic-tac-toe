@@ -26,7 +26,7 @@ export default function Game() {
     }
 
     return (
-        <div className="flex gap-x-[10vw] w-[100%] px-[5vw]">
+        <div className="flex sm:flex-row flex-col sm:justify-center sm:gap-x-[10vw] sm:gap-y-[0] gap-y-[40px] w-full px-[5vw]">
             <Board
                 xIsNext={xIsNext}
                 squares={currentSquares}

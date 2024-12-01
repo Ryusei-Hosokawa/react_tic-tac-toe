@@ -9,7 +9,7 @@ export default function StatusMessage({ winner, xIsNext }: StatusMessageProps) {
     let status: string;
     winner ? status = "Winner:" + winner : status = "Next player: " + (xIsNext ? "✕" : "○");
     return (
-        <div className="w-[80vw] max-w-[400px] mb-[20px]">
+        <div className="mb-[20px]">
             <p className="
                 inline-block
                 p-[7px_15px_8px]

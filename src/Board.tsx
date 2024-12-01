@@ -29,15 +29,18 @@ export default function Board({ xIsNext, squares, onPlay }: BoardProps) {
     };
 
     return (
-        <div>
+        <div className="w-auto mx-auto sm:w-[40vw]">
             <StatusMessage winner={winner} xIsNext={xIsNext} />
             <div
                 className="
                     flex
                     flex-wrap
-                    w-[40vw]
+                    sm:w-full
+                    sm:w-[40vw]
+                    w-[80vw]
                     max-w-[400px]
-                    h-[40vw]
+                    sm:h-[40vw]
+                    h-[80vw]
                     max-h-[400px]
                     border-[5px]
                     rounded-[5px]
